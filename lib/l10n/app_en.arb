@@ -1,0 +1,12 @@
+{
+  "@@locale": "en",
+  "appTitle": "DealHunter",
+  "@appTitle": {
+    "description": "The application title"
+  },
+  "dealsTab": "Deals",
+  "exploreTab": "Explore",
+  "radarTab": "Radar",
+  "savedTab": "Saved",
+  "profileTab": "Profile"
+}
