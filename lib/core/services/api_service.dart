@@ -5,7 +5,7 @@ import '../../models/deal.dart';
 class ApiService {
   static const String baseUrl = String.fromEnvironment(
     'API_BASE_URL',
-    defaultValue: 'https://dealhunter-api.onrender.com',
+    defaultValue: 'https://dealhunter-scraper-production-88ed.up.railway.app',
   );
 
   final Dio _dio;
