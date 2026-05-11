@@ -3,19 +3,25 @@ import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'core/theme/app_theme.dart';
 import 'core/widgets/custom_bottom_nav.dart';
+import 'core/services/fcm_service.dart';
 import 'features/home/home_screen.dart';
 import 'features/explore/explore_screen.dart';
 import 'features/radar/radar_screen.dart';
 import 'features/saved/saved_screen.dart';
 import 'features/profile/profile_screen.dart';
 
+/// API Base URL — uses Railway production by default.
+/// Override with: --dart-define=API_BASE_URL=https://your-url
 const String apiBaseUrl = String.fromEnvironment(
   'API_BASE_URL',
-  defaultValue: 'https://dealhunter-api.onrender.com',
+  defaultValue: 'https://dealhunter-scraper-production-88ed.up.railway.app',
 );
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize Firebase Cloud Messaging
+  await FCMService().initialize();
 
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
